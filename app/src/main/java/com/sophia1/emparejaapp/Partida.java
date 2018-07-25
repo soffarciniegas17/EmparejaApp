@@ -1,8 +1,11 @@
 package com.sophia1.emparejaapp;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -75,10 +78,74 @@ public class Partida extends AppCompatActivity{
                 cartas.add(new ItemCartas(numeros[i],android.R.color.black));
             }
 
-            adapter.notifyDataSetChanged();
+
 
         }catch (Exception e){
 
         }
+        adapter.notifyDataSetChanged();
+        clicItem();
+    }
+    private boolean turno=true;
+    private final int FONDO=android.R.color.transparent;
+    private View view1, view2;
+    private int position1, position2;
+
+    public void clicItem(){
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                if(turno && cartas.get(position).getLayout_tapar()!=FONDO){
+
+                    cartas.get(position).setLayout_tapar(FONDO);
+                    position1=position;
+                    view1=view;
+                    turno=false;
+
+                    adapter.notifyDataSetChanged();
+
+                }else if(!turno && cartas.get(position).getLayout_tapar()!=FONDO && tiempoComprueba!=null){
+
+                    cartas.get(position).setLayout_tapar(FONDO);
+                    position2=position;
+                    view2=view;
+                    turno=true;
+
+                    adapter.notifyDataSetChanged();
+                    tiempoComprueba();
+                }
+
+            }
+        });
+    }
+    CountDownTimer tiempoComprueba;
+    public void tiempoComprueba(){
+
+        gridView.setOnItemClickListener(null);
+
+        tiempoComprueba=new CountDownTimer(1000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                if(cartas.get(position1).getNumero()==cartas.get(position2).getNumero()){
+
+                    view1.setVisibility(View.INVISIBLE);
+                    view2.setVisibility(View.INVISIBLE);
+
+                }else{
+                    cartas.get(position2).setLayout_tapar(android.R.color.black);
+                    cartas.get(position1).setLayout_tapar(android.R.color.black);
+                }
+                adapter.notifyDataSetChanged();
+
+            }
+        }.start();
+
     }
 }
