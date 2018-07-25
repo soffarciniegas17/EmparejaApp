@@ -6,4 +6,20 @@
 
     <color name="morado">#760a9c</color>
 
+    <color name="azul_oscuro">#260bac</color>
+    <color name="azul_claro">#3827fa</color>
+
+    <color name="verde_oscuro">#0bac39</color>
+    <color name="verde_claro">#40fa27</color>
+
+    <color name="gris_oscuro">#626e67</color>
+    <color name="gris_claro">#9997a7</color>
+
+    <color name="cafe_oscuro">#7c5f39</color>
+    <color name="cafe_claro">#b39a5f</color>
+
+    <color name="cafe_oscurot">#817c5f39</color>
+    <color name="cafe_clarot">#b5b39a5f</color>
+
+
 </resources>

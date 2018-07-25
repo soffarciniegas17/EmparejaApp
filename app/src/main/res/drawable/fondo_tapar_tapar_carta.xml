@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:width="@dimen/ancho_tp"
+        android:height="@dimen/alto_tp"
+
+        >
+        <shape>
+            <solid android:color="@color/azul_oscuro">
+
+            </solid>
+            <corners android:radius="@dimen/radio_tp"/>
+
+        </shape>
+    </item>
+
+    <item
+        android:width="@dimen/ancho_tp"
+        android:height="@dimen/alto_tp2"
+
+        >
+        <shape>
+            <solid android:color="@color/azul_claro">
+
+            </solid>
+            <corners android:radius="@dimen/radio_tp"/>
+
+        </shape>
+    </item>
+
+    <item
+        android:width="70dp"
+        android:height="@dimen/alto_tp_figuras"
+        android:gravity="center_horizontal"
+        android:top="5dp"
+
+        >
+        <shape>
+            <solid android:color="@color/azul_oscuro">
+
+            </solid>
+            <corners android:radius="@dimen/radio_tp"/>
+
+        </shape>
+    </item>
+
+    <item
+        android:width="50dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:top="5dp"
+
+
+        >
+        <shape android:shape="oval">
+            <solid android:color="@color/azul_oscuro">
+
+            </solid>
+            <corners android:radius="@dimen/radio_tp"/>
+
+        </shape>
+    </item>
+
+    <item
+        android:width="70dp"
+        android:height="@dimen/alto_tp_figuras"
+        android:gravity="center_horizontal"
+        android:top="90dp"
+
+        >
+        <shape>
+            <solid android:color="@color/azul_oscuro">
+
+            </solid>
+            <corners android:radius="@dimen/radio_tp"/>
+
+        </shape>
+    </item>
+</layer-list>

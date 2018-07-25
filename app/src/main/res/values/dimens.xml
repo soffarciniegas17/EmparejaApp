@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="alto_tp">120dp</dimen>
+    <dimen name="ancho_tp">80dp</dimen>
+    <dimen name="alto_tp2">117dp</dimen>
+    <dimen name="alto_tp_figuras">20dp</dimen>
+    <dimen name="radio_tp">12dp</dimen>
+
+
+</resources>
